@@ -1,0 +1,466 @@
+*{margin:0; padding: 0; font-family: 'Oswald', sans-serif}
+
+
+html{
+    scroll-behavior: smooth;
+}
+header{
+    position: fixed;
+    background: rgb(255, 101, 0);
+    width: 100%;
+    margin:0 auto;
+    z-index: 2;
+    
+}
+
+.header-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+.header-principal>.logo{
+    
+}
+
+.logo>a>img{
+    width: 100%;
+}
+
+.logo-animate{
+    animation-duration: 3s;
+}
+
+.header-nav{
+    justify-content: right;
+    
+}
+.header-anchor-principal, .header-anchor-principal:visited{
+    color:rgb(255,255,255);
+    transition: linear all 0.3s;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 13px;
+}
+
+.header-anchor-principal:hover,.header-anchor-principal:active,.header-anchor-principal:focus{
+    background:rgb(227, 82, 20)  !important;
+    color: rgb(255,255,255) !important;
+}
+
+.header-li-dropdown:hover .header-dropdown{
+    display: block;
+    margin-top: -1px;
+}
+
+
+.header-dropdown{
+    border-radius: 0;
+    padding: 0;
+    
+    
+}
+
+.header-anchor-secundary,.header-anchor-secundary:visited{
+    color:rgb(255, 101, 0);
+    transition: linear all 0.3s;
+    font-weight: 700;
+    
+}
+.header-anchor-secundary:hover,.header-anchor-secundary:active{
+    background-color: rgb(255, 101, 0);
+    color:rgb(255,255,255);
+
+}
+
+
+.header-mobile,.header-mobile:visited{
+    color:rgb(255,255,255);
+    transition: linear all 0.3s;
+    font-weight: 700;
+    background: none;
+    border: none;
+    display: none;
+
+}
+.header-mobile:hover,.header-mobile:active,.header-mobile:focus{
+    transform: none;
+    background:rgb(227, 82, 20)  !important;
+    color: rgb(255,255,255) !important;
+    box-shadow:none;
+}
+
+.canvas-mobile{
+    max-width: 50%;
+    background:rgb(255, 101, 0);
+}
+.header-canvas{
+    
+}
+.header-canvas>h5{
+    
+    color:rgb(255,255,255);
+}
+.canvas-favoritos{
+    max-width: 50%;
+
+}
+.canvas-favoritos h5{
+    color:rgb(255, 101, 0);
+}
+
+.header-nav-mobile{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.header-anchor-canvas, .header-anchor-canvas:visited{
+    display: block;
+    color:rgb(255,255,255);
+    transition: linear all 0.3s;
+    font-weight: 700;
+    text-decoration: none;
+}
+.header-anchor-canvas:hover, .header-anchor-canvas:active{
+    background:rgba(163, 49, 0);
+}
+
+.table-favoritos{
+    width: 33.33%;
+}
+.img-favoritos{
+    width: 100%;
+}
+/* COMEÇO DA MAIN */
+
+
+main{
+    
+    
+    padding:0 !important;
+}
+
+
+
+/* COMEÇO BANNER */
+.banner{
+    width: 100%;
+    height: calc(60vh - 40px);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+
+
+.title-carousel-banner{
+    display: flex;
+    justify-content: center;
+    animation-duration: 3s;
+}
+
+.title-carousel-banner-animate:nth-child(1){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.title-carousel-banner-animate:nth-child(2){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+}
+.title-carousel-banner-animate:nth-child(3){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+}
+.title-carousel-banner-animate:nth-child(4){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
+}
+.title-carousel-banner-animate:nth-child(5){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
+}
+.title-carousel-banner-animate:nth-child(6){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+.title-carousel-banner-animate:nth-child(7){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.6s;
+}
+.title-carousel-banner-animate:nth-child(8){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.7s;
+}
+.title-carousel-banner-animate:nth-child(9){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.8s;
+}
+.title-carousel-banner-animate:nth-child(10){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.9s;
+}
+
+/* FIM BANNER */
+
+main h1{
+
+    padding: 10px 20px;
+    display:block;
+    background-color: rgb(255, 101, 0);
+    font-weight: 700;
+    color:white;
+
+}
+main h2{
+    padding: 20px;
+    font-weight: 700;
+    color:rgb(255, 101, 0);
+}
+.botao-carousel{
+    width: 10%;
+}
+.cartao-conteudo{
+    
+    margin:10px;       
+}
+
+.cartao-conteudo img{
+    width: 100%;
+    
+}
+
+
+
+.butao-carousel{
+    background-color:rgb(255, 101, 0) !important;
+    border-radius: 50px;
+}
+
+.cartao-conteudo button{
+    margin: 0;
+    padding: 0;
+    border: white;
+}
+
+.cartao-conteudo button:hover,.cartao-conteudo button:active,.cartao-conteudo button:focus{
+    
+    border: white;
+}
+
+.texto-titulo-componentes{
+    display: flex;
+    justify-content: center;
+}
+
+.texto-titulo-componentes>.letter{
+    color:rgb(255, 101, 0);
+}
+
+.cartao-conteudo:hover .letter:nth-child(1){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+}
+.cartao-conteudo:hover .letter:nth-child(2){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+}
+.cartao-conteudo:hover .letter:nth-child(3){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+}
+.cartao-conteudo:hover .letter:nth-child(4){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
+} 
+.cartao-conteudo:hover .letter:nth-child(5){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
+} 
+.cartao-conteudo:hover .letter:nth-child(6){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+} 
+.cartao-conteudo:hover .letter:nth-child(7){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.6s;
+} 
+.cartao-conteudo:hover .letter:nth-child(8){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.7s;
+} 
+.cartao-conteudo:hover .letter:nth-child(9){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.8s;
+} 
+.cartao-conteudo:hover .letter:nth-child(10){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.9s;
+} .cartao-conteudo:hover .letter:nth-child(11){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+} .cartao-conteudo:hover .letter:nth-child(12){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 1.1s;
+} 
+.cartao-conteudo:hover .letter:nth-child(13){
+    animation-name: rgbgamer2;
+    animation-duration:1s;
+    animation-iteration-count: infinite;
+    animation-delay: 1.2s;
+} 
+
+/* COMEÇO DO MODAL */
+
+.modal-customizado{
+    border:5px outset rgb(255, 101, 0);
+    border-radius: 0;
+    box-sizing: border-box;
+     
+    
+}
+.modal-customizado-header{
+    border-bottom: 2px solid rgb(255, 101, 0);
+}
+.modal-img{
+    width: 100%;
+    
+}
+
+.modal-img img{
+    width: 100%;
+}
+
+.favoritos-coracao{
+    color:red;
+    background-color: white;
+}
+/* FIM MODAL */
+
+/* COMEÇO DO FOOTER */
+
+footer{
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 60px solid rgb(255, 101, 0);
+}
+
+
+footer>nav>div{
+    box-sizing: border-box;
+    
+}
+footer>nav>div>h6{
+    
+    
+}
+footer>nav>div>ul{
+    list-style: none;
+    padding: 0;
+    
+    
+}
+footer>nav>div>ul>li>a,footer>nav>div>ul>li>a:visited{
+    text-decoration: none;
+    color:rgb(255, 101, 0);
+    display: block;
+    width: 150px;
+    transition: linear all 0.3s;
+}
+footer>nav>div>ul>li>a:hover,footer>nav>div>ul>li>a:active{
+    background-color:rgb(227, 82, 20);
+    color:white;
+}
+
+
+@keyframes rgbgamer{
+    0%{color: rgb(255,255,255);}
+    50%{color:rgb(255, 101, 0); transform: scale(1.1);}
+    100%{colot:rgb(227, 82, 20);transform: scale(1.2);}
+}
+
+@keyframes rgbgamer2{
+    0%{color:rgb(255, 101, 0); }
+    
+    100%{color:rgb(227, 82, 20);transform: scale(1.1);}
+}
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 575px) {
+    
+    
+
+}
+
+@media screen and (max-width: 767px) {
+    .header-nav{
+        display: none;
+    }
+    .header-mobile{
+        display: flex;
+        
+    }
+    
+  }
+@media screen and (max-width: 991px) {
+    
+    
+  }
+@media screen and (max-width: 1199px) {
+    
+    
+}
+@media screen and (max-width: 1399px) {
+    
+    
+}
