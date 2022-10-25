@@ -239,7 +239,10 @@ main h2{
 }
 .botao-carousel{
     width: 10%;
+    margin-left: calc(-8.333%);
+    margin-right: calc(-8.333%);
 }
+
 .cartao-conteudo{
     
     margin:10px;       
@@ -250,9 +253,11 @@ main h2{
     
 }
 
+.zindex999{
+    z-index: 999;
+}
 
-
-.butao-carousel{
+.botao-carousel-span{
     background-color:rgb(255, 101, 0) !important;
     border-radius: 50px;
 }
@@ -353,6 +358,7 @@ main h2{
     animation-delay: 1.2s;
 } 
 
+
 /* COMEÇO DO MODAL */
 
 .modal-customizado{
@@ -377,6 +383,7 @@ main h2{
 .favoritos-coracao{
     color:red;
     background-color: white;
+    border: none;
 }
 /* FIM MODAL */
 
@@ -393,10 +400,7 @@ footer>nav>div{
     box-sizing: border-box;
     
 }
-footer>nav>div>h6{
-    
-    
-}
+
 footer>nav>div>ul{
     list-style: none;
     padding: 0;
@@ -430,6 +434,10 @@ footer>nav>div>ul>li>a:hover,footer>nav>div>ul>li>a:active{
 
 
 
+
+.modal-backdrop{
+    z-index: 2;
+}
 
 
 
