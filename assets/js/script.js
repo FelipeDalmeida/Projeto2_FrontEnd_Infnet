@@ -1,7 +1,7 @@
 class Hardware{
     constructor(nome,foto,id,tipo,info='Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quo eius suscipit repellendus doloribus neque deleniti fugit labore eum reprehenderit architecto accusamus harum officiis rerum, voluptatum expedita nostrum recusandae laborum!'){
 
-        this.dados={'nome':nome, 'foto':foto, 'tipo':tipo, 'info':info, "id":id}
+        this.dados={'nome':nome, 'foto':foto, "id":id, 'tipo':tipo, 'info':info}
         this.selecionado=false // 1 selecionado
     }
 
@@ -45,12 +45,17 @@ class Hardware{
         }
     }
     butaoFavoritoON(){  //ADICIONA O BOTAO DE SELECIONADO
+        
         let butao=document.getElementById(this.dados.nome)
+        if(butao){
         butao.innerHTML=`<i class="fa-sharp fa-solid fa-heart"></i>`
+        }
     }
     butaoFavoritoOFF(){ //TIRA O BOTAO DE SELECIONADO
         let butao=document.getElementById(this.dados.nome)
+        if(butao){
         butao.innerHTML=`<i class="fa-regular fa-heart"></i>`
+        }
     }
 
     salvarLocal(){ //salva na memória local o favorito
@@ -61,7 +66,7 @@ class Hardware{
     criaElementoCarrossel(){
         return `
         <div class="cartao-conteudo">
-            <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#Modal${this.dados.nome}">
+            <button type="button" class="btn" onclick="${this.dados.id}.openModal()"">
                 <img src="${this.dados.foto}" alt="Imgem ${this.dados.nome}" title="${this.dados.nome}">                                    
             </button>
             <div class="texto-titulo-componentes">
@@ -69,32 +74,58 @@ class Hardware{
             </div>
         </div>`
     }
-
-    criaModal(){
-        let div =document.createElement('div')
-        div.setAttribute('id',`Modal${this.dados.nome}`)
-        div.classList.add('zindex999', 'modal', 'fade')
-        div.setAttribute('tabindex','-1')
-        div.setAttribute('aria-labelledby',`Modal${this.dados.nome}Label`)
-        div.setAttribute('aria-hidden',`true`)
-        div.innerHTML=`
-            <div class="modal-dialog">
-                <div class="modal-customizado modal-content">
-                    <div class="modal-customizado-header modal-header">
-                        <h5 class="modal-title" id="Modal${this.dados.nome}Label">${this.dados.nome}&nbsp;&nbsp;</h5><button id='${this.dados.nome}' class="favoritos-coracao" onclick="${this.dados.id}.actionFav()"><i class="fa-regular fa-heart"></i></button>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">
+    openModal(){
+        const modalDim=new bootstrap.Modal('#ModalHardware',{});
+        modalDim.show();
+        
+        if(this.selecionado){
+            document.getElementById('modalTitulo').innerHTML=`<h5 class="modal-title" id="ModalLabel">${this.dados.nome}&nbsp;&nbsp;</h5><button id="${this.dados.nome}" class="favoritos-coracao" onclick="${this.dados.id}.actionFav()"><i class="fa-sharp fa-solid fa-heart"></i></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
+        } else{
+            document.getElementById('modalTitulo').innerHTML=`<h5 class="modal-title" id="ModalLabel">${this.dados.nome}&nbsp;&nbsp;</h5><button id="${this.dados.nome}" class="favoritos-coracao" onclick="${this.dados.id}.actionFav()"><i class="fa-regular fa-heart"></i></button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>`
+        }
+        document.getElementById('modalBody').innerHTML=`
                         <span class="modal-img"><img src="${this.dados.foto}" alt=""></span>
-                        <p>${this.dados.info}</p>
-    
-                    </div>                                          
-                </div>
-            </div>
-        `
-        let modais=document.getElementById('modal')
-        modais.appendChild(div)
+                        <p>${this.dados.info}</p>`
     }
+    // criaElementoCarrossel(){
+    //     return `
+    //     <div class="cartao-conteudo">
+    //         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#Modal${this.dados.nome}">
+    //             <img src="${this.dados.foto}" alt="Imgem ${this.dados.nome}" title="${this.dados.nome}">                                    
+    //         </button>
+    //         <div class="texto-titulo-componentes">
+    //             ${criaTituloCarrousel(this.dados.nome)}
+    //         </div>
+    //     </div>`
+    // }
+
+    // criaModal(){
+    //     let div =document.createElement('div')
+    //     div.setAttribute('id',`Modal${this.dados.nome}`)
+    //     div.classList.add('zindex999', 'modal', 'fade')
+    //     div.setAttribute('tabindex','-1')
+    //     div.setAttribute('aria-labelledby',`Modal${this.dados.nome}Label`)
+    //     div.setAttribute('aria-hidden',`true`)
+    //     div.innerHTML=`
+    //         <div class="modal-dialog">
+    //             <div class="modal-customizado modal-content">
+    //                 <div class="modal-customizado-header modal-header">
+    //                     <h5 class="modal-title" id="Modal${this.dados.nome}Label">${this.dados.nome}&nbsp;&nbsp;</h5><button id='${this.dados.nome}' class="favoritos-coracao" onclick="${this.dados.id}.actionFav()"><i class="fa-regular fa-heart"></i></button>
+    //                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    //                 </div>
+    //                 <div class="modal-body">
+    //                     <span class="modal-img"><img src="${this.dados.foto}" alt=""></span>
+    //                     <p>${this.dados.info}</p>
+    
+    //                 </div>                                          
+    //             </div>
+    //         </div>
+    //     `
+    //     let modais=document.getElementById('modal')
+    //     modais.appendChild(div)
+    // }
 }
 
 
@@ -343,17 +374,19 @@ const bannersInstancia=new Banners(banners);
 
 
 document.addEventListener('DOMContentLoaded',function(){
+    
     bannersInstancia.criaBanner();
+    verificaFavoritos();
+    loadLocal();
     criaCarrousel('nvidea');
     criaCarrousel('processador');
     criaCarrousel('ram');
     criaCarrousel('amd-vga');
     criaCarrousel('ssd');
     criaCarrousel('fontes');
-    criaModais();
+    // criaModais();
     slider();
-    verificaFavoritos();
-    loadLocal();
+    
     criaBanner()
 })
 
