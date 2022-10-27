@@ -80,8 +80,8 @@ function slider(){            //CONFIGURA SLICK
         dots: true,
         infinite: true,
         speed: 300,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 5,
+        slidesToScroll: 5,
         
         nextArrow: `<button class="botao-carousel carousel-control-next">
                         <span class="carousel-control-next-icon botao-carousel-span" aria-hidden="true"></span>
@@ -93,23 +93,30 @@ function slider(){            //CONFIGURA SLICK
                     </button>`,
         responsive: [
         {
-            breakpoint: 1024,
+            breakpoint: 1999,
             settings: {
               slidesToShow: 4,
-              slidesToScroll: 3,
+              slidesToScroll: 4,
               infinite: true,
               dots: true
             }
           },
           {
-            breakpoint: 600,
+            breakpoint: 991,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+            }
+          },
+          {
+            breakpoint: 767,
             settings: {
               slidesToShow: 2,
               slidesToScroll: 2
             }
           },
           {
-            breakpoint: 480,
+            breakpoint: 575,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1
@@ -148,92 +155,92 @@ function criaModais(){
 //////////////////////////////////  MODAL FIM////////////////////////////////////////////
 
 //////////////////////////////////  BANNER ////////////////////////////////////////////
-function criaTituloBannerLeft(banner){
-    let letrasTitulo=banner.nomeLeft
-    letrasTitulo=letrasTitulo.split("")
-    let titulo=""
+// function criaTituloBannerLeft(banner){
+//     let letrasTitulo=banner.nomeLeft
+//     letrasTitulo=letrasTitulo.split("")
+//     let titulo=""
     
     
-    for(letra of letrasTitulo){
-    if(letra==" "){
-        titulo+=`<h3 class="title-carousel-banner-animate">&nbsp;&nbsp;</h3>`
-    } else{
-        titulo+=`<h3 class="title-carousel-banner-animate">${letra}</h3>`
-    }
-    }
-    return titulo;
-}
-function criaTituloBannerRight(banner){
-    let letrasTitulo=banner.nomeRight
-    let titulo=""
-    if(letrasTitulo.length>0){
-        letrasTitulo=letrasTitulo.split("")
+//     for(letra of letrasTitulo){
+//     if(letra==" "){
+//         titulo+=`<h3 class="title-carousel-banner-animate">&nbsp;&nbsp;</h3>`
+//     } else{
+//         titulo+=`<h3 class="title-carousel-banner-animate">${letra}</h3>`
+//     }
+//     }
+//     return titulo;
+// }
+// function criaTituloBannerRight(banner){
+//     let letrasTitulo=banner.nomeRight
+//     let titulo=""
+//     if(letrasTitulo.length>0){
+//         letrasTitulo=letrasTitulo.split("")
         
-        for(letra of letrasTitulo){
-            if(letra==""){
-                titulo+=`<h3 class="title-carousel-banner-animate">&nbsp;&nbsp;</h3>`
-            } else{
-                titulo+=`<h3 class="title-carousel-banner-animate">${letra}</h3>`
-            }
-            }
-    } else {
-        return null;
-    }
+//         for(letra of letrasTitulo){
+//             if(letra==""){
+//                 titulo+=`<h3 class="title-carousel-banner-animate">&nbsp;&nbsp;</h3>`
+//             } else{
+//                 titulo+=`<h3 class="title-carousel-banner-animate">${letra}</h3>`
+//             }
+//             }
+//     } else {
+//         return null;
+//     }
 
-    return titulo;
-}
-function criaBanner(){
-    let bannerHtml=document.getElementById('banner');
-    let elementoBanner=""
-    let i=0;
-    let active=""
-    for(const banner of banners){
-        let tituloLeft=criaTituloBannerLeft(banner)
-        let tituloRight=criaTituloBannerRight(banner)
+//     return titulo;
+// }
+// function criaBanner(){
+//     let bannerHtml=document.getElementById('banner');
+//     let elementoBanner=""
+//     let i=0;
+//     let active=""
+//     for(const banner of banners){
+//         let tituloLeft=criaTituloBannerLeft(banner)
+//         let tituloRight=criaTituloBannerRight(banner)
         
-        if(i>0){
-            active="";
-        } else{
-            active="active"
-        }
+//         if(i>0){
+//             active="";
+//         } else{
+//             active="active"
+//         }
 
-        if(tituloRight){
-            elementoBanner+=`
-        <div class="carousel-item ${active}" data-bs-interval="5000">
-            <div class="banner" style="background-image: url('${banner.img}')"></div> 
-            <div class="title-carousel-banner carousel-caption d-block">
-                <div class="title-carousel-banner animate__animated animate__backInLeft" >
-                    ${tituloLeft}
-                </div>
-                <div class="title-carousel-banner animate__animated animate__backInRight" >
-                    ${tituloRight}
-                </div>
-            </div>
-        </div>`
-        } else {
-            elementoBanner+= `
-        <div class="carousel-item ${active}" data-bs-interval="5000">
-            <div class="banner" style="background-image: url('${banner.img}')"></div> 
-            <div class="title-carousel-banner carousel-caption d-block">
-                <div class="title-carousel-banner animate__animated animate__backInLeft" >
-                    ${tituloLeft}
-                </div>
-            </div>
-        </div>`
-        }
-        i++;
-    }
-    elementoBanner+=`
-    <button class="botao-carousel carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="botao-carousel carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>`
-    document.getElementById('banner').innerHTML=elementoBanner;
+//         if(tituloRight){
+//             elementoBanner+=`
+//         <div class="carousel-item ${active}" data-bs-interval="5000">
+//             <div class="banner" style="background-image: url('${banner.img}')"></div> 
+//             <div class="title-carousel-banner carousel-caption d-block">
+//                 <div class="title-carousel-banner animate__animated animate__backInLeft" >
+//                     ${tituloLeft}
+//                 </div>
+//                 <div class="title-carousel-banner animate__animated animate__backInRight" >
+//                     ${tituloRight}
+//                 </div>
+//             </div>
+//         </div>`
+//         } else {
+//             elementoBanner+= `
+//         <div class="carousel-item ${active}" data-bs-interval="5000">
+//             <div class="banner" style="background-image: url('${banner.img}')"></div> 
+//             <div class="title-carousel-banner carousel-caption d-block">
+//                 <div class="title-carousel-banner animate__animated animate__backInLeft" >
+//                     ${tituloLeft}
+//                 </div>
+//             </div>
+//         </div>`
+//         }
+//         i++;
+//     }
+//     elementoBanner+=`
+//     <button class="botao-carousel carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
+//         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+//         <span class="visually-hidden">Previous</span>
+//     </button>
+//     <button class="botao-carousel carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
+//         <span class="carousel-control-next-icon" aria-hidden="true"></span>
+//         <span class="visually-hidden">Next</span>
+//     </button>`
+//     document.getElementById('banner').innerHTML=elementoBanner;
     
-}
+// }
 
 //////////////////////////////////  FIM ////////////////////////////////////////////

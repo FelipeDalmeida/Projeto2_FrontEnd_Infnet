@@ -86,8 +86,8 @@ class Hardware{
                     </div>
                     <div class="modal-body">
                         <span class="modal-img"><img src="${this.dados.foto}" alt=""></span>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quo eius suscipit repellendus doloribus neque deleniti fugit labore eum reprehenderit architecto accusamus harum officiis rerum, voluptatum expedita nostrum recusandae laborum!</p>
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa quo eius suscipit repellendus doloribus neque deleniti fugit labore eum reprehenderit architecto accusamus harum officiis rerum, voluptatum expedita nostrum recusandae laborum!</p>
+                        <p>${this.dados.info}</p>
+    
                     </div>                                          
                 </div>
             </div>
@@ -98,7 +98,99 @@ class Hardware{
 }
 
 
+class Banners{
+    constructor(info){
+        // this.nomeLeft=nomeLeft;
+        // this.nomeRight=nomeRight;
+        // this.img=img;
+        this.info=info;
+    }
+    criaTituloBannerLeft(i){
+        let letrasTitulo=this.info[i].nomeLeft.split("")
+        let titulo=""
+        
+        
+        for(let letra of letrasTitulo){
+        if(letra==" "){
+            titulo+=`<h3 class="title-carousel-banner-animate">&nbsp;&nbsp;</h3>`
+        } else{
+            titulo+=`<h3 class="title-carousel-banner-animate">${letra}</h3>`
+        }
+        }
+        return titulo;
+    }
+    criaTituloBannerRight(i){
+        let letrasTitulo=this.info[i].nomeRight;
+        let titulo=""
+        if(letrasTitulo.length>0){
+            letrasTitulo=letrasTitulo.split("")
+            
+            for(let letra of letrasTitulo){
+                if(letra==""){
+                    titulo+=`<h3 class="title-carousel-banner-animate">&nbsp;&nbsp;</h3>`
+                } else{
+                    titulo+=`<h3 class="title-carousel-banner-animate">${letra}</h3>`
+                }
+                }
+        } else {
+            return null;
+        }
+    
+        return titulo;
+    }
+    criaBanner(){
+        let bannerHtml=document.getElementById('banner');
+        let elementoBanner=""
+        let active=""
 
+        for(let i=0;i<this.info.length;i++){
+            
+            if(i>0){
+                active="";
+            } else{
+                active="active"
+            }
+    
+            if(this.info[i].nomeRight.length>0){
+                elementoBanner+=`
+            <div class="carousel-item ${active}" data-bs-interval="5000">
+                <div class="banner" style="background-image: url('${this.info[i].img}')"></div> 
+                <div class="title-carousel-banner carousel-caption d-block">
+                    <div class="title-carousel-banner animate__animated animate__backInLeft" >
+                        ${this.criaTituloBannerLeft(i)}
+                    </div>
+                    <div class="title-carousel-banner animate__animated animate__backInRight" >
+                        ${this.criaTituloBannerRight(i)}
+                    </div>
+                </div>
+            </div>`
+            } else {
+                elementoBanner+= `
+            <div class="carousel-item ${active}" data-bs-interval="5000">
+                <div class="banner" style="background-image: url('${this.info[i].img}')"></div> 
+                <div class="title-carousel-banner carousel-caption d-block">
+                    <div class="title-carousel-banner animate__animated animate__backInLeft" >
+                        ${this.criaTituloBannerLeft(i)}
+                    </div>
+                </div>
+            </div>`
+            }
+            
+        }
+        elementoBanner+=`
+        <button class="botao-carousel carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="botao-carousel carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>`
+        document.getElementById('banner').innerHTML=elementoBanner;
+        
+    }
+    
+}
 
 
 
@@ -143,6 +235,30 @@ hardware25= new Hardware('RYZEN-9-5950X',"assets/img/amd-5950x.jpg","hardware25"
 hardware26= new Hardware('RYZEN-9-5900X',"assets/img/amd-5900x.jpg","hardware26","processador")
 hardware27= new Hardware('RYZEN-7-5700G',"assets/img/amd-5700g.jpg","hardware27","processador")
 hardware28= new Hardware('RYZEN-5-5600G',"assets/img/amd-5600g.jpg","hardware28","processador")
+hardware29= new Hardware('DDR5-A',"assets/img/ddr5.jpg","hardware29","ram")
+hardware30= new Hardware('DDR5-B',"assets/img/ddr5.jpg","hardware30","ram")
+hardware31= new Hardware('DDR5-C',"assets/img/ddr5.jpg","hardware31","ram")
+hardware32= new Hardware('DDR4-A',"assets/img/ddr4.jpg","hardware32","ram")
+hardware33= new Hardware('DDR4-B',"assets/img/ddr4.jpg","hardware33","ram")
+hardware34= new Hardware('DDR4-C',"assets/img/ddr4.jpg","hardware34","ram")
+hardware35= new Hardware('DDR3-A',"assets/img/ddr3.jpg","hardware35","ram")
+hardware36= new Hardware('DDR3-B',"assets/img/ddr3.jpg","hardware36","ram")
+hardware37= new Hardware('SSD-NVMe-A',"assets/img/ssd1.jpg","hardware37","ssd")
+hardware38= new Hardware('SSD-NVMe-B',"assets/img/ssd2.jpg","hardware38","ssd")
+hardware39= new Hardware('SSD-NVMe-C',"assets/img/ssd3.jpg","hardware39","ssd")
+hardware40= new Hardware('SSD-NVMe-D',"assets/img/ssd4.jpg","hardware40","ssd")
+hardware41= new Hardware('SSD-Sata-A',"assets/img/ssd5.jpg","hardware41","ssd")
+hardware42= new Hardware('SSD-Sata-B',"assets/img/ssd6.jpg","hardware42","ssd")
+hardware43= new Hardware('SSD-Sata-C',"assets/img/ssd7.jpg","hardware43","ssd")
+hardware44= new Hardware('SSD-Sata-D',"assets/img/ssd8.jpg","hardware44","ssd")
+hardware45= new Hardware('Modular-A',"assets/img/fonte1.jpg","hardware45","fontes")
+hardware46= new Hardware('Modular-B',"assets/img/fonte1.jpg","hardware46","fontes")
+hardware47= new Hardware('Modular-C',"assets/img/fonte2.jpg","hardware47","fontes")
+hardware48= new Hardware('Modular-D',"assets/img/fonte2.jpg","hardware48","fontes")
+hardware49= new Hardware('Modular-E',"assets/img/fonte3.jpg","hardware49","fontes")
+hardware50= new Hardware('Modular-F',"assets/img/fonte3.jpg","hardware50","fontes")
+hardware51= new Hardware('Modular-G',"assets/img/fonte4.jpg","hardware51","fontes")
+hardware52= new Hardware('Modular-H',"assets/img/fonte4.jpg","hardware52","fontes")
 
 
 const favoritosIntancias=[
@@ -174,7 +290,30 @@ const favoritosIntancias=[
     hardware26,
     hardware27,
     hardware28,
-    ]
+    hardware29,
+    hardware30,
+    hardware31,
+    hardware32,
+    hardware33,
+    hardware34,
+    hardware35,
+    hardware36,
+    hardware37,
+    hardware38,
+    hardware39,
+    hardware40,
+    hardware41,
+    hardware42,
+    hardware43,
+    hardware44,
+    hardware45,
+    hardware46,
+    hardware47,
+    hardware48,
+    hardware49,
+    hardware50,
+    hardware51,
+    hardware52]
 
 
 const banners=[
@@ -185,7 +324,7 @@ const banners=[
 },
 {
     nomeLeft:"RYZEN 9",
-    nomeRight:"X5950",
+    nomeRight:"5950X",
     img:"assets/img/hardware3.jpg",
 },
 {
@@ -195,16 +334,27 @@ const banners=[
 }
 ]
 
+const bannersInstancia=new Banners(banners);
 
 
 
 
 
-document.addEventListener('DOMContentLoaded',function(){criaBanner();})
-document.addEventListener('DOMContentLoaded',function(){criaCarrousel('nvidea');})
-document.addEventListener('DOMContentLoaded',function(){criaCarrousel('amd-vga');})
-document.addEventListener('DOMContentLoaded',function(){criaCarrousel('processador');})
-document.addEventListener('DOMContentLoaded',function(){criaModais();})
-document.addEventListener('DOMContentLoaded',function(){slider();})
-// loadLocal()
+
+
+document.addEventListener('DOMContentLoaded',function(){
+    bannersInstancia.criaBanner();
+    criaCarrousel('nvidea');
+    criaCarrousel('processador');
+    criaCarrousel('ram');
+    criaCarrousel('amd-vga');
+    criaCarrousel('ssd');
+    criaCarrousel('fontes');
+    criaModais();
+    slider();
+    verificaFavoritos();
+    loadLocal();
+    criaBanner()
+})
+
 

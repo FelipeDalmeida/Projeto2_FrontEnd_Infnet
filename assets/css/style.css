@@ -458,10 +458,14 @@ footer>nav>div>ul>li>a:hover,footer>nav>div>ul>li>a:active{
         display: flex;
         
     }
-    
+    .header-anchor-principal, .header-anchor-principal:visited{
+        font-size: 1em !important;
+    }
   }
 @media screen and (max-width: 991px) {
-    
+    .header-anchor-principal, .header-anchor-principal:visited{
+        font-size: 0.85em;
+    }
     
   }
 @media screen and (max-width: 1199px) {
