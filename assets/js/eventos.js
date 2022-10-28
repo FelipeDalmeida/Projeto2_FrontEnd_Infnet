@@ -7,18 +7,29 @@ function efeitoRolar(event){
         header.style.backgroundColor='rgba(255, 101, 0.8)'
     }
 }
-
 function loadLocal(){   //função para ler memória
-    for(i=0;i<favoritosIntancias.length;i++){
-        let id=`hardware${i+1}`
+    for(i=0;i<hardwareInstancias.length;i++){
+        let id=`favorito${i+1}`
         let valor=JSON.parse(window.localStorage.getItem(id));
         if(valor){
             if(valor.selecionado){
-                favoritosIntancias[i].actionFav()
+                hardwareInstancias[i].actionFav()
             }
         }
     }
 }
+
+// function loadLocal(){   //função para ler memória
+//     for(i=0;i<hardwareInstancias.length;i++){
+//         let id=`hardware${i+1}`
+//         let valor=JSON.parse(window.localStorage.getItem(id));
+//         if(valor){
+//             if(valor.selecionado){
+//                 hardwareInstancias[i].actionFav()
+//             }
+//         }
+//     }
+// }
 
 ////////////////////////////////////////FUNÇÕES GENÉRICAS FAVORITOS////////////////////////////
 function somaContador(){ //SOMA 1 AO CONTADOR DE FAVORITO
@@ -48,7 +59,7 @@ function verificaFavoritos(){
 function limpaTabela(){
 
     let intancia;
-    for(instancia of favoritosIntancias){
+    for(instancia of hardwareInstancias){
         if(instancia.selecionado){
             instancia.removeFavorito()
         }
@@ -130,7 +141,7 @@ function criaCarrousel(id){
     let carrousel = document.getElementById(id);
     let div=document.createElement('div')
     div.classList.add('offset-1', 'col-10', `slider`)
-    favoritosIntancias.forEach(element => {
+    hardwareInstancias.forEach(element => {
         if(element.dados.tipo==id){
         div.innerHTML+=element.criaElementoCarrossel();
         }
@@ -146,7 +157,7 @@ function criaCarrousel(id){
 //////////////////////////////////  MODAL ////////////////////////////////////////////
 // function criaModais(){
 
-//     favoritosIntancias.forEach(element => {
+//     hardwareInstancias.forEach(element => {
 //        element.criaModal()
         
 //     });
