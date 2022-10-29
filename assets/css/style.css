@@ -1,4 +1,11 @@
-*{margin:0; padding: 0; font-family: 'Oswald', sans-serif}
+:root{
+    --orange-light: rgb(255, 101, 0);
+    --orange-dark: rgb(227, 82, 20);
+    --white-white:rgb(255,255,255);
+    --orange-brown:rgb(227, 82, 20);
+}
+
+*{margin:0; padding: 0; font-family: 'Oswald', sans-serif; transition: linear all 0.3s;}
 
 
 html{
@@ -6,7 +13,7 @@ html{
 }
 header{
     position: fixed;
-    background: rgb(255, 101, 0);
+    background: var(--orange-light);
     width: 100%;
     margin:0 auto;
     z-index: 2;
@@ -20,9 +27,6 @@ header{
     height: 50px;
 }
 
-.header-principal>.logo{
-    
-}
 
 .logo>a>img{
     width: 100%;
@@ -37,7 +41,7 @@ header{
     
 }
 .header-anchor-principal, .header-anchor-principal:visited{
-    color:rgb(255,255,255);
+    color:var(--white-white);
     transition: linear all 0.3s;
     font-weight: 700;
     text-decoration: none;
@@ -45,8 +49,8 @@ header{
 }
 
 .header-anchor-principal:hover,.header-anchor-principal:active,.header-anchor-principal:focus{
-    background:rgb(227, 82, 20)  !important;
-    color: rgb(255,255,255) !important;
+    background:var(--orange-dark)  !important;
+    color: var(--white-white) !important;
 }
 
 .header-li-dropdown:hover .header-dropdown{
@@ -63,20 +67,20 @@ header{
 }
 
 .header-anchor-secundary,.header-anchor-secundary:visited{
-    color:rgb(255, 101, 0);
+    color:var(--orange-light);
     transition: linear all 0.3s;
     font-weight: 700;
     
 }
 .header-anchor-secundary:hover,.header-anchor-secundary:active{
-    background-color: rgb(255, 101, 0);
-    color:rgb(255,255,255);
+    background-color: var(--orange-light);
+    color:var(--white-white);
 
 }
 
 
 .header-mobile,.header-mobile:visited{
-    color:rgb(255,255,255);
+    color:var(--white-white);
     transition: linear all 0.3s;
     font-weight: 700;
     background: none;
@@ -86,28 +90,28 @@ header{
 }
 .header-mobile:hover,.header-mobile:active,.header-mobile:focus{
     transform: none;
-    background:rgb(227, 82, 20)  !important;
-    color: rgb(255,255,255) !important;
+    background:var(--orange-dark)  !important;
+    color: var(--white-white) !important;
     box-shadow:none;
 }
 
 .canvas-mobile{
     max-width: 50%;
-    background:rgb(255, 101, 0);
+    background:var(--orange-light);
 }
 .header-canvas{
     
 }
 .header-canvas>h5{
     
-    color:rgb(255,255,255);
+    color:var(--white-white);
 }
 .canvas-favoritos{
     max-width: 50%;
 
 }
 .canvas-favoritos h5{
-    color:rgb(255, 101, 0);
+    color:var(--orange-light);
 }
 
 .header-nav-mobile{
@@ -117,13 +121,13 @@ header{
 }
 .header-anchor-canvas, .header-anchor-canvas:visited{
     display: block;
-    color:rgb(255,255,255);
+    color:var(--white-white);
     transition: linear all 0.3s;
     font-weight: 700;
     text-decoration: none;
 }
 .header-anchor-canvas:hover, .header-anchor-canvas:active{
-    background:rgba(163, 49, 0);
+    background:var(--orange-brown);
 }
 
 .table-favoritos{
@@ -153,7 +157,10 @@ main{
     background-position: center;
 }
 
-
+#banner-placeholder{
+    height: 60vh;
+    width: 100%;
+  } 
 
 .title-carousel-banner{
     display: flex;
@@ -222,21 +229,36 @@ main{
 }
 
 /* FIM BANNER */
-
-main h1{
-
+.titulo-principal{
     padding: 10px 20px;
     display:block;
-    background-color: rgb(255, 101, 0);
+    background-color: var(--orange-light);
+}
+main h1{
+
+    display: inline;
     font-weight: 700;
-    color:white;
+    color:var(--white-white)
 
 }
 main h2{
     padding: 20px;
     font-weight: 700;
-    color:rgb(255, 101, 0);
+    color:var(--orange-light);
 }
+.sup-modified{
+    top:-1.5em !important;
+}
+.info{
+    color:var(--white-white);
+    padding: 5px;
+}
+
+.hardware-placeholder{ 
+    width: 100%;
+    height: 25vh;
+  }
+
 .botao-carousel{
     width: 10%;
     margin-left: calc(-8.333%);
@@ -258,7 +280,7 @@ main h2{
 }
 
 .botao-carousel-span{
-    background-color:rgb(255, 101, 0) !important;
+    background-color:var(--orange-light); !important;
     border-radius: 50px;
 }
 
@@ -266,6 +288,7 @@ main h2{
     margin: 0;
     padding: 0;
     border: white;
+    display: contents;
 }
 
 .cartao-conteudo button:hover,.cartao-conteudo button:active,.cartao-conteudo button:focus{
@@ -279,7 +302,9 @@ main h2{
 }
 
 .texto-titulo-componentes>.letter{
-    color:rgb(255, 101, 0);
+    color:var(--orange-light);
+    font-size: 2em;
+    font-weight: 700;
 }
 
 .cartao-conteudo:hover .letter:nth-child(1){
@@ -357,19 +382,41 @@ main h2{
     animation-iteration-count: infinite;
     animation-delay: 1.2s;
 } 
-
+.up-arrow-open-modal{
+    align-self: center;
+    display: none;
+}
+.cartao-conteudo:hover .up-arrow-open-modal{
+    display: block;
+    animation-name: uparrow;
+    animation-duration:500ms;
+    animation-iteration-count: 1;
+    color:var(--orange-light);
+}
+.cartao-conteudo>button:hover .up-arrow-open-modal{
+    color:var(--orange-brown);
+    transform:scale(1.2)
+}
+@keyframes uparrow{
+    0%{font-size: 0px;}
+    50%{font-size: 0.5em;}
+    100%{font-size: 1em;}
+}
+.cartao-conteudo .tooltip{
+    background-color: var(--orange-dark);
+}
 
 /* COMEÇO DO MODAL */
 
 .modal-customizado{
-    border:5px outset rgb(255, 101, 0);
+    border:5px outset var(--orange-light);
     border-radius: 0;
     box-sizing: border-box;
      
     
 }
 .modal-customizado-header{
-    border-bottom: 2px solid rgb(255, 101, 0);
+    border-bottom: 2px solid var(--orange-light);
 }
 .modal-img{
     width: 100%;
@@ -392,7 +439,7 @@ main h2{
 footer{
     margin-top: 20px;
     padding-top: 20px;
-    border-top: 60px solid rgb(255, 101, 0);
+    border-top: 60px solid var(--orange-light);
 }
 
 
@@ -409,27 +456,27 @@ footer>nav>div>ul{
 }
 footer>nav>div>ul>li>a,footer>nav>div>ul>li>a:visited{
     text-decoration: none;
-    color:rgb(255, 101, 0);
+    color:var(--orange-light);
     display: block;
     width: 150px;
     transition: linear all 0.3s;
 }
 footer>nav>div>ul>li>a:hover,footer>nav>div>ul>li>a:active{
-    background-color:rgb(227, 82, 20);
+    background-color:var(--orange-dark);
     color:white;
 }
 
 
 @keyframes rgbgamer{
-    0%{color: rgb(255,255,255);}
-    50%{color:rgb(255, 101, 0); transform: scale(1.1);}
-    100%{colot:rgb(227, 82, 20);transform: scale(1.2);}
+    0%{color: var(--white-white);}
+    50%{color:var(--orange-light); transform: scale(1.1);}
+    100%{colot:var(--orange-dark);transform: scale(1.2);}
 }
 
 @keyframes rgbgamer2{
-    0%{color:rgb(255, 101, 0); }
+    0%{color:var(--orange-light); }
     
-    100%{color:rgb(227, 82, 20);transform: scale(1.1);}
+    100%{color:var(--orange-dark);transform: scale(1.1);}
 }
 
 

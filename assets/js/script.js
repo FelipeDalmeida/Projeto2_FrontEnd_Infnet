@@ -66,12 +66,13 @@ class Hardware{
     criaElementoCarrossel(){
         return `
         <div class="cartao-conteudo">
-            <button type="button" class="btn" onclick="hardwareInstancias[${this.dados.id-1}].openModal()"">
-                <img src="${this.dados.img}" alt="Imgem ${this.dados.nome}" title="${this.dados.nome}">                                    
-            </button>
-            <div class="texto-titulo-componentes">
+        <img src="${this.dados.img}" alt="Imgem ${this.dados.nome}" >  
+            <button type="button col-12" class="btn" onclick="hardwareInstancias[${this.dados.id-1}].openModal()">
+            <span class="texto-titulo-componentes">
                 ${criaTituloCarrousel(this.dados.nome)}
-            </div>
+            </span>                               
+            </button>
+            
         </div>`
     }
     openModal(){
@@ -220,6 +221,18 @@ class Banners{
     
 }
 
+class Tooltip{
+    constructor(tooltips){
+        this.tooltips=tooltips;
+    }
+
+    criaTolltip(){
+        for(let i=0; i<this.tooltips.length;i++){
+            let id=`info-${this.tooltips[i].tipo}`
+            document.getElementById(id).innerHTML=`<sup class="sup-modified"><i class="info fa-solid fa-circle-info" data-toggle="tooltip" data-bs-placement="top" title="${this.tooltips[i].info}"></i></sup>`
+        }
+    }
+}
 
 
 
@@ -233,60 +246,6 @@ class Banners{
 
 
 
-
-
-// hardware1= new Hardware('RTX-3090',"assets/img/rtx-3090.jpg","hardware1","nvidea")
-// hardware2= new Hardware('RTX-3080',"assets/img/rtx-3080.jpg","hardware2","nvidea")
-// hardware3= new Hardware('RTX-3070',"assets/img/rtx-3070.jpg","hardware3","nvidea")
-// hardware4= new Hardware('RTX-3060',"assets/img/rtx-3060.jpg","hardware4","nvidea")
-// hardware5= new Hardware('RTX-3050',"assets/img/rtx-3050.jpg","hardware5","nvidea")
-// hardware6= new Hardware('RTX-2080',"assets/img/rtx-2080.jpg","hardware6","nvidea")
-// hardware7= new Hardware('RTX-2070',"assets/img/rtx-2070.jpg","hardware7","nvidea")
-// hardware8= new Hardware('RTX-2060',"assets/img/rtx-2060.jpg","hardware8","nvidea")
-// hardware9= new Hardware('GTX-1660',"assets/img/gtx-1660.jpg","hardware9","nvidea")
-// hardware10= new Hardware('GTX-1080',"assets/img/gtx-1080.jpg","hardware10","nvidea")
-// hardware11= new Hardware('GTX-1050',"assets/img/gtx-1050.jpg","hardware11","nvidea")
-// hardware12= new Hardware('GT-1030',"assets/img/gt-1030.jpg","hardware12","nvidea")
-// hardware13= new Hardware('RX-6900XT',"assets/img/rx-6900xt.jpg","hardware13","amd-vga")
-// hardware14= new Hardware('RX-6800XT',"assets/img/rx-6800xt.jpg","hardware14","amd-vga")
-// hardware15= new Hardware('RX-6750XT',"assets/img/rx-6750xt.jpg","hardware15","amd-vga")
-// hardware16= new Hardware('RX-6700XT',"assets/img/rx-6700xt.jpg","hardware16","amd-vga")
-// hardware17= new Hardware('RX-6600XT',"assets/img/rx-6600xt.jpg","hardware17","amd-vga")
-// hardware18= new Hardware('RX-570',"assets/img/rx-570.jpg","hardware18","amd-vga")
-// hardware19= new Hardware('RX-550',"assets/img/rx-550.jpg","hardware19","amd-vga")
-// hardware20= new Hardware('AXRX-550',"assets/img/axrx-550.jpg","hardware20","amd-vga")
-// hardware21= new Hardware('i9-12900K',"assets/img/i9-12900K.jpg","hardware21","processador")
-// hardware22= new Hardware('i9-12900KF',"assets/img/i9-12900KF.jpg","hardware22","processador")
-// hardware23= new Hardware('i9-11900K',"assets/img/i9-11900K.jpg","hardware23","processador")
-// hardware24= new Hardware('i9-10900K',"assets/img/i9-10900K.jpg","hardware24","processador")
-// hardware25= new Hardware('RYZEN-9-5950X',"assets/img/amd-5950x.jpg","hardware25","processador")
-// hardware26= new Hardware('RYZEN-9-5900X',"assets/img/amd-5900x.jpg","hardware26","processador")
-// hardware27= new Hardware('RYZEN-7-5700G',"assets/img/amd-5700g.jpg","hardware27","processador")
-// hardware28= new Hardware('RYZEN-5-5600G',"assets/img/amd-5600g.jpg","hardware28","processador")
-// hardware29= new Hardware('DDR5-A',"assets/img/ddr5.jpg","hardware29","ram")
-// hardware30= new Hardware('DDR5-B',"assets/img/ddr5.jpg","hardware30","ram")
-// hardware31= new Hardware('DDR5-C',"assets/img/ddr5.jpg","hardware31","ram")
-// hardware32= new Hardware('DDR4-A',"assets/img/ddr4.jpg","hardware32","ram")
-// hardware33= new Hardware('DDR4-B',"assets/img/ddr4.jpg","hardware33","ram")
-// hardware34= new Hardware('DDR4-C',"assets/img/ddr4.jpg","hardware34","ram")
-// hardware35= new Hardware('DDR3-A',"assets/img/ddr3.jpg","hardware35","ram")
-// hardware36= new Hardware('DDR3-B',"assets/img/ddr3.jpg","hardware36","ram")
-// hardware37= new Hardware('SSD-NVMe-A',"assets/img/ssd1.jpg","hardware37","ssd")
-// hardware38= new Hardware('SSD-NVMe-B',"assets/img/ssd2.jpg","hardware38","ssd")
-// hardware39= new Hardware('SSD-NVMe-C',"assets/img/ssd3.jpg","hardware39","ssd")
-// hardware40= new Hardware('SSD-NVMe-D',"assets/img/ssd4.jpg","hardware40","ssd")
-// hardware41= new Hardware('SSD-Sata-A',"assets/img/ssd5.jpg","hardware41","ssd")
-// hardware42= new Hardware('SSD-Sata-B',"assets/img/ssd6.jpg","hardware42","ssd")
-// hardware43= new Hardware('SSD-Sata-C',"assets/img/ssd7.jpg","hardware43","ssd")
-// hardware44= new Hardware('SSD-Sata-D',"assets/img/ssd8.jpg","hardware44","ssd")
-// hardware45= new Hardware('Modular-A',"assets/img/fonte1.jpg","hardware45","fontes")
-// hardware46= new Hardware('Modular-B',"assets/img/fonte1.jpg","hardware46","fontes")
-// hardware47= new Hardware('Modular-C',"assets/img/fonte2.jpg","hardware47","fontes")
-// hardware48= new Hardware('Modular-D',"assets/img/fonte2.jpg","hardware48","fontes")
-// hardware49= new Hardware('Modular-E',"assets/img/fonte3.jpg","hardware49","fontes")
-// hardware50= new Hardware('Modular-F',"assets/img/fonte3.jpg","hardware50","fontes")
-// hardware51= new Hardware('Modular-G',"assets/img/fonte4.jpg","hardware51","fontes")
-// hardware52= new Hardware('Modular-H',"assets/img/fonte4.jpg","hardware52","fontes")
 
 
 // const hardwares=[{"nome":"RTX-3090","img":"assets/img/rtx-3090.jpg","id":"1","tipo":"nvidea"},
@@ -360,21 +319,54 @@ class Banners{
 //     img:"assets/img/hardware.jpg",
 // }
 // ]
+  const tooltips=[
+      {
+      tipo:"vga",
+      info:"É responsável por gerar e renderizar gráficos tanto 2D quanto 3D. Frequentemente, estas são anunciadas como placas gráficas discretas ou dedicadas, enfatizando a distinção entre elas e as placas gráficas integradas."
+     
+  },
+  {
+     tipo:"cpu",
+     info:"Circuito integrado que realiza as funções de cálculo e tomada de decisão de um computador. Todos os computadores e equipamentos eletrônicos baseiam-se nele para executar suas funções, podemos dizer que o processador é o cérebro do computador por realizar todas estas funções."
+  },
+  {
+     tipo:"ram",
+     info:"Memória de Acesso Aleatório (RAM), é a memória de curto prazo, ou seja, é um espaço para informações temporárias do sistema operacional do seu computador."
+  },
+  {
+     tipo:"ssd",
+     info:"Também conhecido como Solid-State Drive, um SSD é uma tecnologia de armazenamento, sendo a evolução do HD (Disco Rígido)."
+  },
+  {
+     tipo:"fontes",
+     info:"Uma fonte de alimentação é um equipamento usado para alimentar cargas elétricas."
+  }
+  ]
+
+ const tooltipsInstancia=new Tooltip(tooltips)
+
+
+function removePlaceholderCarousel(){
+    elementos=document.querySelectorAll(".hardware-placeholder")
+    for (let elemento of elementos){
+      elemento.style.display="none"
+    }
+}
 
 let bannersInstancia=[];
 let banners=[]
 const loadBanner=async()=>{
-    const responseBanner=await fetch("http://demo7797720.mockable.io/banner");
+    const responseBanner=await fetch("https://demo7797720.mockable.io/banner");
     banners=await responseBanner.json();
     bannersInstancia=new Banners(banners);
     bannersInstancia.criaBanner();
-
+    document.querySelector("#banner-placeholder").style.display = "none";//inserção
     
 }
 let hardwareInstancias=[];
 let hardwares=[]
 const loadHardwares = async()=>{
-    const responseHardware= await fetch("http://demo7797720.mockable.io/hardware");
+    const responseHardware= await fetch("https://demo7797720.mockable.io/hardware");
     hardwares = await responseHardware.json();
     for(let i=0;i<hardwares.length;i++){
         hardwareInstancias.push(new Hardware(hardwares[i].nome,hardwares[i].img,hardwares[i].id,hardwares[i].tipo))
@@ -388,14 +380,20 @@ const loadHardwares = async()=>{
     criaCarrousel('ssd');
     criaCarrousel('fontes');
     slider();
+    removePlaceholderCarousel();
 }
 
 
 
 
+
+
 document.addEventListener('DOMContentLoaded',function(){
-    loadHardwares()
-    loadBanner()
+    loadHardwares();
+    loadBanner();
+    tooltipsInstancia.criaTolltip()
+    $("body").tooltip({ selector: "[data-toggle=tooltip]" });
+    
     // bannersInstancia.criaBanner();
     // verificaFavoritos();
     // loadLocal();
@@ -410,5 +408,3 @@ document.addEventListener('DOMContentLoaded',function(){
     // slider();
 
 })
-
-

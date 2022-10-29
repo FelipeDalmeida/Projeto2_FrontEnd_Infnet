@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/slick.css">
     <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
-    <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Mouse+Memoirs&family=Open+Sans&family=Oswald:wght@300;500;700&family=Oxygen:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/dfe143884b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
     
     <title>Início - Hardwareflix</title>
 </head>
@@ -74,7 +74,11 @@
     <main class="container-fluid">
         <section>
         <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
-            <div id="banner" class="carousel-inner">
+          <div class="placeholder-glow">
+            <div id="banner-placeholder" class="placeholder"></div>
+          </div>
+            
+          <div id="banner" class="carousel-inner">
               
           </div>
           </div>
@@ -95,34 +99,57 @@
         </section>
 
         <section class="" id="vga">
-            <h1 class="">Placas de Vídeo</h1>             
-            <h2 id="nvidea">NVidea</h2>
+          <div class="titulo-principal"><h1 class="">Placas de Vídeo&nbsp;</h1><span id="info-vga"></span></div>             
+          <h2 id="nvidea">NVidea</h2>
             
+          <div class="placeholder-glow">
+            <div class="hardware-placeholder  placeholder"></div>
+          </div>
+      
               
-            <h2 id="amd-vga">AMD</h2>
+          <h2 id="amd-vga">AMD</h2>
 
-            
+          <div class="placeholder-glow">
+            <div class="hardware-placeholder  placeholder"></div>
+          </div> 
             
         </section>
         <section class="" id="cpu">
-          <h1 class="">Processadores</h1>             
+          <div class="titulo-principal"><h1 class="">Processadores&nbsp;</h1><span id="info-cpu"></span></div>          
           <h2 id="processador">AMD & Intel</h2>
           
+          <div class="placeholder-glow">
+            <div class="hardware-placeholder  placeholder"></div>
+          </div>
+
       </section>
       <section class="" >
-        <h1 class="">Memória RAM</h1>             
+        <div class="titulo-principal"><h1 class="">Memória RAM&nbsp;</h1><span id="info-ram"></span></div>       
         <h2 id="ram">DDR3 DDR4 DDR5</h2>
        
+        <div class="placeholder-glow">
+          <div class="hardware-placeholder  placeholder"></div>
+        </div>
+
     </section>
     <section class="">
-      <h1 class="">SSD</h1>             
+      <div class="titulo-principal"><h1 class="">SSD&nbsp;</h1><span id="info-ssd"></span></div>          
       <h2 id="ssd">NVMe & SATA</h2>
       
+      <div class="placeholder-glow">
+        <div class="hardware-placeholder  placeholder"></div>
+      </div>
+
   </section>
   <section class="" >
-        <h1 class="">Fontes</h1>             
+    <div class="titulo-principal"><h1 class="">Fontes&nbsp;</h1><span id="info-fontes"></span></div>         
         <h2 id="fontes">Fontes Modulares</h2>
         
+        <div class="placeholder-glow">
+          <div class="hardware-placeholder  placeholder"></div>
+        </div>
+
+
     </section>
     </main>
     

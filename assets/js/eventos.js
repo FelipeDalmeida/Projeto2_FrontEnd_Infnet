@@ -82,6 +82,7 @@ function criaTituloCarrousel(nome){
            titulo+=`<p class="letter">${letra}</p>`
         }
     }
+    titulo+=`<p class="letter">&nbsp;</p><i class="up-arrow-open-modal fa-solid fa-chevron-up"></i>`
     return titulo
 
 }
