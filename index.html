@@ -15,7 +15,12 @@
     <title>Início - Hardwareflix</title>
 </head>
 <body onscroll="efeitoRolar(event)">
-    <header class="container-fluid">
+  <!-- ANIMAÇÃO DE LOAD -->
+  <div class="loading spinner-container">  
+    <div class="spinner"></div>
+  </div>
+  <!-- ANIMAÇÃO DE LOAD -->
+    <header class="container-fluid loadingNone">
         <div class="header-principal container-xxl">
             <span class="logo col-4 col-md-2">
                 <a href="index.html"><img src="assets/img/logo.png" class="logo-animate animate__animated animate__jello" alt="Logo da Hardwareflix" title="Hardwareflix"></a>
@@ -71,7 +76,7 @@
           </div>
           <!-- CANVAS FAVORITOS -->
     </header>
-    <main class="container-fluid">
+    <main class="container-fluid loadingNone">
         <section>
         <div id="carouselBanner" class="carousel slide" data-bs-ride="carousel">
           <div class="placeholder-glow">
@@ -153,7 +158,7 @@
     </section>
     </main>
     
-    <footer class="container-fluid">
+    <footer class="container-fluid loadingNone">
       <nav class="row">
         <div class="col-md-3 col-6">
           <h6>Hardware</h6>

@@ -1,8 +1,9 @@
+@import url('./loader.css');
+
 :root{
     --orange-light: rgb(255, 101, 0);
     --orange-dark: rgb(227, 82, 20);
     --white-white:rgb(255,255,255);
-    --orange-brown:rgb(227, 82, 20);
 }
 
 *{margin:0; padding: 0; font-family: 'Oswald', sans-serif; transition: linear all 0.3s;}
@@ -127,7 +128,7 @@ header{
     text-decoration: none;
 }
 .header-anchor-canvas:hover, .header-anchor-canvas:active{
-    background:var(--orange-brown);
+    background:var(--orange-dark);
 }
 
 .table-favoritos{
@@ -394,7 +395,7 @@ main h2{
     color:var(--orange-light);
 }
 .cartao-conteudo>button:hover .up-arrow-open-modal{
-    color:var(--orange-brown);
+    color:var(--orange-dark);
     transform:scale(1.2)
 }
 @keyframes uparrow{

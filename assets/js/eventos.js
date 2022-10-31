@@ -19,18 +19,6 @@ function loadLocal(){   //função para ler memória
     }
 }
 
-// function loadLocal(){   //função para ler memória
-//     for(i=0;i<hardwareInstancias.length;i++){
-//         let id=`hardware${i+1}`
-//         let valor=JSON.parse(window.localStorage.getItem(id));
-//         if(valor){
-//             if(valor.selecionado){
-//                 hardwareInstancias[i].actionFav()
-//             }
-//         }
-//     }
-// }
-
 ////////////////////////////////////////FUNÇÕES GENÉRICAS FAVORITOS////////////////////////////
 function somaContador(){ //SOMA 1 AO CONTADOR DE FAVORITO
     let contador=parseInt(document.getElementById('contador').innerText)
@@ -154,105 +142,5 @@ function criaCarrousel(id){
 
 //////////////////////////////////  CARROUSEL FIM////////////////////////////////////////////
 
-
-//////////////////////////////////  MODAL ////////////////////////////////////////////
-// function criaModais(){
-
-//     hardwareInstancias.forEach(element => {
-//        element.criaModal()
-        
-//     });
-    
-// }
-//////////////////////////////////  MODAL FIM////////////////////////////////////////////
-
-//////////////////////////////////  BANNER ////////////////////////////////////////////
-// function criaTituloBannerLeft(banner){
-//     let letrasTitulo=banner.nomeLeft
-//     letrasTitulo=letrasTitulo.split("")
-//     let titulo=""
-    
-    
-//     for(letra of letrasTitulo){
-//     if(letra==" "){
-//         titulo+=`<h3 class="title-carousel-banner-animate">&nbsp;&nbsp;</h3>`
-//     } else{
-//         titulo+=`<h3 class="title-carousel-banner-animate">${letra}</h3>`
-//     }
-//     }
-//     return titulo;
-// }
-// function criaTituloBannerRight(banner){
-//     let letrasTitulo=banner.nomeRight
-//     let titulo=""
-//     if(letrasTitulo.length>0){
-//         letrasTitulo=letrasTitulo.split("")
-        
-//         for(letra of letrasTitulo){
-//             if(letra==""){
-//                 titulo+=`<h3 class="title-carousel-banner-animate">&nbsp;&nbsp;</h3>`
-//             } else{
-//                 titulo+=`<h3 class="title-carousel-banner-animate">${letra}</h3>`
-//             }
-//             }
-//     } else {
-//         return null;
-//     }
-
-//     return titulo;
-// }
-// function criaBanner(){
-//     let bannerHtml=document.getElementById('banner');
-//     let elementoBanner=""
-//     let i=0;
-//     let active=""
-//     for(const banner of banners){
-//         let tituloLeft=criaTituloBannerLeft(banner)
-//         let tituloRight=criaTituloBannerRight(banner)
-        
-//         if(i>0){
-//             active="";
-//         } else{
-//             active="active"
-//         }
-
-//         if(tituloRight){
-//             elementoBanner+=`
-//         <div class="carousel-item ${active}" data-bs-interval="5000">
-//             <div class="banner" style="background-image: url('${banner.img}')"></div> 
-//             <div class="title-carousel-banner carousel-caption d-block">
-//                 <div class="title-carousel-banner animate__animated animate__backInLeft" >
-//                     ${tituloLeft}
-//                 </div>
-//                 <div class="title-carousel-banner animate__animated animate__backInRight" >
-//                     ${tituloRight}
-//                 </div>
-//             </div>
-//         </div>`
-//         } else {
-//             elementoBanner+= `
-//         <div class="carousel-item ${active}" data-bs-interval="5000">
-//             <div class="banner" style="background-image: url('${banner.img}')"></div> 
-//             <div class="title-carousel-banner carousel-caption d-block">
-//                 <div class="title-carousel-banner animate__animated animate__backInLeft" >
-//                     ${tituloLeft}
-//                 </div>
-//             </div>
-//         </div>`
-//         }
-//         i++;
-//     }
-//     elementoBanner+=`
-//     <button class="botao-carousel carousel-control-prev" type="button" data-bs-target="#carouselBanner" data-bs-slide="prev">
-//         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-//         <span class="visually-hidden">Previous</span>
-//     </button>
-//     <button class="botao-carousel carousel-control-next" type="button" data-bs-target="#carouselBanner" data-bs-slide="next">
-//         <span class="carousel-control-next-icon" aria-hidden="true"></span>
-//         <span class="visually-hidden">Next</span>
-//     </button>`
-//     document.getElementById('banner').innerHTML=elementoBanner;
-    
-// }
 
 //////////////////////////////////  FIM ////////////////////////////////////////////

@@ -90,43 +90,6 @@ class Hardware{
                         <span class="modal-img"><img src="${this.dados.img}" alt=""></span>
                         <p>${this.dados.info}</p>`
     }
-    // criaElementoCarrossel(){
-    //     return `
-    //     <div class="cartao-conteudo">
-    //         <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#Modal${this.dados.nome}">
-    //             <img src="${this.dados.foto}" alt="Imgem ${this.dados.nome}" title="${this.dados.nome}">                                    
-    //         </button>
-    //         <div class="texto-titulo-componentes">
-    //             ${criaTituloCarrousel(this.dados.nome)}
-    //         </div>
-    //     </div>`
-    // }
-
-    // criaModal(){
-    //     let div =document.createElement('div')
-    //     div.setAttribute('id',`Modal${this.dados.nome}`)
-    //     div.classList.add('zindex999', 'modal', 'fade')
-    //     div.setAttribute('tabindex','-1')
-    //     div.setAttribute('aria-labelledby',`Modal${this.dados.nome}Label`)
-    //     div.setAttribute('aria-hidden',`true`)
-    //     div.innerHTML=`
-    //         <div class="modal-dialog">
-    //             <div class="modal-customizado modal-content">
-    //                 <div class="modal-customizado-header modal-header">
-    //                     <h5 class="modal-title" id="Modal${this.dados.nome}Label">${this.dados.nome}&nbsp;&nbsp;</h5><button id='${this.dados.nome}' class="favoritos-coracao" onclick="${this.dados.id}.actionFav()"><i class="fa-regular fa-heart"></i></button>
-    //                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-    //                 </div>
-    //                 <div class="modal-body">
-    //                     <span class="modal-img"><img src="${this.dados.foto}" alt=""></span>
-    //                     <p>${this.dados.info}</p>
-    
-    //                 </div>                                          
-    //             </div>
-    //         </div>
-    //     `
-    //     let modais=document.getElementById('modal')
-    //     modais.appendChild(div)
-    // }
 }
 
 
@@ -383,28 +346,29 @@ const loadHardwares = async()=>{
     removePlaceholderCarousel();
 }
 
-
+function removeDisplayNoneLoader(){
+    let elementosLoading=document.querySelectorAll('.loadingNone');
+    for(let elemento of elementosLoading){
+        elemento.classList.remove("loadingNone");
+    }
+}
 
 
 
 
 document.addEventListener('DOMContentLoaded',function(){
-    loadHardwares();
-    loadBanner();
-    tooltipsInstancia.criaTolltip()
     $("body").tooltip({ selector: "[data-toggle=tooltip]" });
-    
-    // bannersInstancia.criaBanner();
-    // verificaFavoritos();
-    // loadLocal();
-    
-    // criaCarrousel('nvidea');
-    // criaCarrousel('processador');
-    // criaCarrousel('ram');
-    // criaCarrousel('amd-vga');
-    // criaCarrousel('ssd');
-    // criaCarrousel('fontes');
-    // criaModais();
-    // slider();
-
+    setTimeout(()=>{
+        document.querySelector('.loading').style.display="none";
+        removeDisplayNoneLoader()
+        loadHardwares();
+        loadBanner();
+        tooltipsInstancia.criaTolltip()
+    },5000);
+    // document.querySelector('.loading').style.display="none";
+    // removeDisplayNoneLoader()
+    // loadHardwares();
+    // loadBanner();
+    // tooltipsInstancia.criaTolltip()
 })
+
