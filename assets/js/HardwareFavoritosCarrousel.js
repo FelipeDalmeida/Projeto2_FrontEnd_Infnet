@@ -66,8 +66,9 @@ class Hardware{
     criaElementoCarrossel(){
         return `
         <div class="cartao-conteudo">
+        <button type="button col-12" class="btn" onclick="hardwareInstancias[${this.dados.id-1}].openModal()">
         <img src="${this.dados.img}" alt="Imgem ${this.dados.nome}" >  
-            <button type="button col-12" class="btn" onclick="hardwareInstancias[${this.dados.id-1}].openModal()">
+            
             <span class="texto-titulo-componentes">
                 ${criaTituloCarrousel(this.dados.nome)}
             </span>                               
@@ -163,7 +164,7 @@ function criaTituloCarrousel(nome){
 
 function slider(){            //CONFIGURA SLICK
     $('.slider').slick({
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 300,
         slidesToShow: 5,

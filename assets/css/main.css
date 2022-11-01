@@ -47,13 +47,16 @@ main h2{
     width: 100%;
     
 }
+.cartao-conteudo:hover{
+    transform: scale(1.1);
+}
 
 .zindex999{
     z-index: 999;
 }
 
 .botao-carousel-span{
-    background-color:var(--orange-light); !important;
+    background-color:var(--orange-light) !important;; 
     border-radius: 50px;
 }
 
