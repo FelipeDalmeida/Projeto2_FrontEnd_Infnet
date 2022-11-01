@@ -1,17 +1,21 @@
-  .spinner-container {
+.loadingNone{
+    display: none;
+}
+
+.spinner-container {
     height: 100vh;
     width: 100vw;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: rgb(255, 101, 0);
+    background-color: var(--orange-light);
   }
   
   .spinner-container .spinner {
     height: 100px;
     width: 100px;
-    background-color: rgb(255,255,255);
+    background-color: var(--white-white);
     border-radius: 50%;
     position: relative;
     animation: animateRotate 3s linear infinite;
@@ -22,7 +26,7 @@
     content: '';
     position: absolute;
     border-radius: 50%;
-    background-color: rgb(255, 101, 0);
+    background-color: var(--orange-light);
     top: 50%;
     transform: translateY(-50%);
   }

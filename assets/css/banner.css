@@ -1,0 +1,86 @@
+.banner{
+    width: 100%;
+    height: calc(60vh - 40px);
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+#banner-placeholder{
+    height: 60vh;
+    width: 100%;
+  } 
+
+.title-carousel-banner{
+    display: flex;
+    justify-content: center;
+    animation-duration: 3s;
+}
+
+.title-carousel-banner-animate:nth-child(1){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+.title-carousel-banner-animate:nth-child(2){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.1s;
+}
+.title-carousel-banner-animate:nth-child(3){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.2s;
+}
+.title-carousel-banner-animate:nth-child(4){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.3s;
+}
+.title-carousel-banner-animate:nth-child(5){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
+}
+.title-carousel-banner-animate:nth-child(6){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.5s;
+}
+.title-carousel-banner-animate:nth-child(7){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.6s;
+}
+.title-carousel-banner-animate:nth-child(8){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.7s;
+}
+.title-carousel-banner-animate:nth-child(9){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.8s;
+}
+.title-carousel-banner-animate:nth-child(10){
+    animation-name: rgbgamer;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-delay: 0.9s;
+}
+
+@keyframes rgbgamer{
+    0%{color: var(--white-white);}
+    50%{color:var(--orange-light); transform: scale(1.1);}
+    100%{colot:var(--orange-dark);transform: scale(1.2);}
+}
+/* FIM BANNER */

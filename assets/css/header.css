@@ -1,0 +1,128 @@
+header{
+    position: fixed;
+    background: var(--orange-light);
+    width: 100%;
+    margin:0 auto;
+    z-index: 2;
+    
+}
+
+.header-principal{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+}
+
+
+.logo>a>img{
+    width: 100%;
+}
+
+.logo-animate{
+    animation-duration: 3s;
+}
+
+.header-nav{
+    justify-content: right;
+    
+}
+.header-anchor-principal, .header-anchor-principal:visited{
+    color:var(--white-white);
+    transition: linear all 0.3s;
+    font-weight: 700;
+    text-decoration: none;
+    padding: 13px;
+}
+
+.header-anchor-principal:hover,.header-anchor-principal:active,.header-anchor-principal:focus{
+    background:var(--orange-dark)  !important;
+    color: var(--white-white) !important;
+}
+
+.header-li-dropdown:hover .header-dropdown{
+    display: block;
+    margin-top: -1px;
+}
+
+
+.header-dropdown{
+    border-radius: 0;
+    padding: 0;
+    
+    
+}
+
+.header-anchor-secundary,.header-anchor-secundary:visited{
+    color:var(--orange-light);
+    transition: linear all 0.3s;
+    font-weight: 700;
+    
+}
+.header-anchor-secundary:hover,.header-anchor-secundary:active{
+    background-color: var(--orange-light);
+    color:var(--white-white);
+
+}
+
+
+.header-mobile,.header-mobile:visited{
+    color:var(--white-white);
+    transition: linear all 0.3s;
+    font-weight: 700;
+    background: none;
+    border: none;
+    display: none;
+
+}
+.header-mobile:hover,.header-mobile:active,.header-mobile:focus{
+    transform: none;
+    background:var(--orange-dark)  !important;
+    color: var(--white-white) !important;
+    box-shadow:none;
+}
+
+.canvas-mobile{
+    max-width: 50%;
+    background:var(--orange-light);
+}
+.header-canvas{
+    
+}
+.header-canvas>h5{
+    
+    color:var(--white-white);
+}
+.canvas-favoritos{
+    max-width: 50%;
+
+}
+.canvas-favoritos h5{
+    color:var(--orange-light);
+}
+
+.header-nav-mobile{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.header-anchor-canvas, .header-anchor-canvas:visited{
+    display: block;
+    color:var(--white-white);
+    transition: linear all 0.3s;
+    font-weight: 700;
+    text-decoration: none;
+}
+.header-anchor-canvas:hover, .header-anchor-canvas:active{
+    background:var(--orange-dark);
+}
+
+.table-favoritos{
+    width: 33.33%;
+}
+.img-favoritos{
+    width: 100%;
+}
+
+
+

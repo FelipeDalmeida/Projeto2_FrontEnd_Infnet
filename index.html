@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/animate.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css"/>
+    <link rel="stylesheet" href="assets/libraries/animate/animate.css">
+    <link rel="stylesheet" href="assets/libraries/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/libraries/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="assets/libraries/slick/slick-theme.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;700&family=Mouse+Memoirs&family=Open+Sans&family=Oswald:wght@300;500;700&family=Oxygen:wght@700&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/dfe143884b.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="assets/css/style.css">
@@ -43,6 +43,7 @@
                 </ul>
                 
                 <button  class="header-mobile btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling"><i class="fa-solid fa-bars"></i></button>
+                
 
                 <div class="canvas-mobile offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
                     <div class="header-canvas offcanvas-header">
@@ -56,7 +57,7 @@
                             <li><a class="header-anchor-principal header-anchor-canvas" href="#ram">Memória RAM</a></li>
                             <li><a class="header-anchor-principal header-anchor-canvas" href="#ssd">SSDs</a></li>
                             <li><a class="header-anchor-principal header-anchor-canvas" href="#fontes">Fontes</a></li>
-                            <li><a class="header-anchor-principal header-anchor-canvas" aria-current="page" href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvasFavoritos" aria-controls="canvasFavoritos">Favoritos</a></li>
+                            <li><a class="header-anchor-principal header-anchor-canvas" aria-current="page" href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#canvasFavoritos" aria-controls="canvasFavoritos">Favoritos <span class="badge text-bg-warning" id="contadorMobile">0</span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -204,11 +205,14 @@
       </nav>
 
     </footer>
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/slick.min.js"></script>
+    <script src="assets/libraries/jquery/jquery.min.js"></script>
+    <script src="assets/libraries/bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="assets/libraries/slick/slick.min.js"></script>
+    <script src="assets/libraries/require/require.js"></script>
+    <script src="assets/js/HardwareFavoritosCarrousel.js"></script>
+    <script src="assets/js/banner.js"></script>
+    <script src="assets/js/tooltip.js"></script>
     <script src="assets/js/script.js"></script>
-    <script src="assets/js/eventos.js"></script>
     
 </body>
 </html>
